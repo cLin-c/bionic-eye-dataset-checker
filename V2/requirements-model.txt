@@ -1,0 +1,7 @@
+# Install only in the selected inference Python environment.
+# Use the ultralytics/torch versions compatible with your trained checkpoint.
+ultralytics>=8.3
+torch>=2.0
+numpy>=1.23
+Pillow>=9
+PyYAML>=6

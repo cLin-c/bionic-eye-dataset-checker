@@ -1,0 +1,26 @@
+# 仿生眼数据集检查与纠正
+
+已按版本分目录，V1 保留原来的人工检查与编辑功能，V2 增加模型辅助质量检查。两个版本均直接编辑所打开的数据集标签，使用同一种自动备份机制。
+
+| 版本 | 功能 | 启动 |
+|---|---|---|
+| V1 | 可视化检查、编辑框、类别管理、标签校验与备份 | `./启动V1.sh` |
+| V2 | V1 全部功能 + 模型评分、质量阈值、低分优先、预测叠加、质量报告 | `./启动V2.sh` |
+
+```bash
+git clone https://github.com/cLin-c/bionic-eye-dataset-checker.git
+cd bionic-eye-dataset-checker
+python3 -m pip install -r requirements.txt
+./启动V2.sh
+```
+
+原来的 `./启动数据集检查.sh`、`python3 app.py` 默认启动 V2。Windows 对应使用 `启动V1.bat` / `启动V2.bat`。
+
+默认打开 head 数据集；可在程序内选择其他数据集，也可以传入 `--dataset '/数据集路径'`。
+
+- [V1 使用说明](V1/使用说明.md)
+- [V2 模型辅助检查说明](V2/模型检查说明.md)
+- [V2 基础编辑说明](V2/使用说明.md)
+- [V2 界面预览](V2/V2界面预览.png)
+
+当前电脑的界面 Python 与推理 Python 分开运行。V2 默认识别 `/home/ccl/miniconda3/envs/yolov11/bin/python` 用于模型推理，可以在界面选择其他已安装 torch、ultralytics 的解释器。
